@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>タイトル</title>
+<meta name="author" content="(オーサ―)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">タイトル</h1><h2 class="author">オーサ―</h2><p class="date">Created: 2019-10-29 火 13:32</p>
+</section>
+
+<section>
+<section id="slide-org8c6ee17">
+<h2 id="org8c6ee17">セクション１</h2>
+<p>
+短いキャプション<br />
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org834d5c3">
+<h3 id="org834d5c3">M/Eスライド（Main/Subパターン）</h3>
+<p>
+[画像]<br />
+</p>
+</section>
+</section>
+<section>
+<section id="slide-orgc6ab60c">
+<h4 id="orgc6ab60c">説明内容ヘッダ</h4>
+<div class="outline-text-4" id="text-orgc6ab60c">
+</div>
+<ul class="org-ul">
+<li><a id="orgab6e568"></a>説明項目<br /></li>
+<li><a id="org7c36483"></a>説明項目<br /></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org56bba79">
+<h4 id="org56bba79">説明内容ヘッダ</h4>
+<div class="outline-text-4" id="text-org56bba79">
+</div>
+<ul class="org-ul">
+<li><a id="org0c08d38"></a>説明項目<br /></li>
+<li><a id="org78f5aba"></a>説明項目<br /></li>
+<li><a id="orgb4005df"></a>説明項目<br /></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org381c9ad">
+<h4 id="org381c9ad">説明内容ヘッダ</h4>
+<div class="outline-text-4" id="text-org381c9ad">
+</div>
+<ul class="org-ul">
+<li><a id="org619fe01"></a>説明項目<br /></li>
+<li><a id="orgda909fd"></a>説明項目<br /></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org93dc2b0">
+<h3 id="org93dc2b0">m/eスライド（Contentsパターン）</h3>
+<div class="outline-text-3" id="text-org93dc2b0">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd3560ef">
+<h4 id="orgd3560ef">説明内容ヘッダ</h4>
+<p>
+[画像]<br />
+</p>
+<ul class="org-ul">
+<li><a id="orgfd1aaed"></a>説明項目<br /></li>
+<li><a id="org22de573"></a>説明項目<br /></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org13f287e">
+<h4 id="org13f287e">説明内容ヘッダ</h4>
+<p>
+[画像]<br />
+</p>
+<ul class="org-ul">
+<li><a id="orge86b589"></a>説明項目<br /></li>
+<li><a id="org8a30368"></a>説明項目<br /></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org425f6b3">
+<h4 id="org425f6b3">説明内容ヘッダ</h4>
+<p>
+[画像]<br />
+</p>
+<ul class="org-ul">
+<li><a id="orgbcf60cb"></a>説明項目<br /></li>
+<li><a id="org120595c"></a>説明項目<br /></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

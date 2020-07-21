@@ -1,0 +1,49 @@
+/* スライド上下分割（ヘッダおよびコンテント） */
+.reveal .slides section .grid {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas:
+        "upper"
+            "lower";
+    grid-template-rows: 1fr 10fr;
+    height: 1080px;
+}
+.header {
+    font-size: 5vmin;
+    background-color: green;
+    grid-area: upper;
+}
+.content {
+    /* background-color: white; */
+    align-self: center;
+    grid-area: lower;
+    height: 100%;
+    padding: 4vmin;
+}
+
+/* Bootstrapコンテナを拡げる */
+.container {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+/* 上下一杯に拡げる（勝手に付加されるpresent対策） */
+.reveal .slides section.present {
+    padding: 0;
+}
+
+/* Horizontal list */
+.height-full {
+    height: 100%;
+    display: flex;
+}
+
+.item {
+    border-radius: 5px;
+    background-color: white; /* デバッグ用 */
+    border: 0;
+    font-size: 3.5vmin;
+    margin: 1vmin;
+    padding: 1vmin 2vmin;
+}

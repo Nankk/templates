@@ -1,0 +1,8 @@
+# Execute below in the root directory
+mkdir build
+mkdir cmake
+git clone https://github.com/Crascit/DownloadProject.git ./cmake/DownloadProject
+cd build
+cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+cd ..
+ln -s build/compile_commands.json .
