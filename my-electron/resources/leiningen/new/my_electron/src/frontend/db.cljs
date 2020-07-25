@@ -1,5 +1,4 @@
-(ns {{name}}.db)
+(ns frontend.db)
 
 (def default-db
   {:name "re-frame"})
-

@@ -1,4 +1,5 @@
 node_modules/
+resources/main.js
 resources/public/js/compiled
 
 /target

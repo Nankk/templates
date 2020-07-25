@@ -1,7 +1,7 @@
-(ns {{name}}.style.global
-    (:require
-     [garden.core :as g]
-     ))
+(ns frontend.style.global
+  (:require
+   [garden.core :as g]
+   ))
 
 (defn css []
   (g/css
