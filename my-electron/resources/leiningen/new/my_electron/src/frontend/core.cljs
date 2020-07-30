@@ -41,4 +41,5 @@
 (defn init []
   (rf/dispatch-sync [::events/initialize-db])
   (dev-setup)
+  (register-handlers-bidirectional)
   (mount-root))

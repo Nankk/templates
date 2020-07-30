@@ -11,4 +11,4 @@
 
 (rf/reg-event-db ::add-ipc-channel
   (fn [db [_ k v]]
-    (update-in db [:ipc-chennels] assoc k v)))
+    (update-in db [:ipc-channels] assoc k v)))
