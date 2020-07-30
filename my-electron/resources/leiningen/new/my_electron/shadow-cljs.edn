@@ -34,4 +34,9 @@
                      :compiler-options {:closure-warnings {:global-this :off}
                                         :closure-defines  {re-frame.trace.trace-enabled? true}
                                         :optimizations    :simple}
-                     :devtools         {:after-load frontend.core/mount-root}}}}
+                     :devtools         {:http-root    "public"
+                                        :http-handler shadow.http.push-state/handle
+                                        :http-port    8700
+                                        :after-load   frontend.core/mount-root
+                                        :preloads     [devtools.preload
+                                                       day8.re-frame-10x.preload]}}}}
