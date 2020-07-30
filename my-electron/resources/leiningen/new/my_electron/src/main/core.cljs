@@ -1,9 +1,8 @@
 (ns main.core
   (:require
    [async-interop.interop :refer-macros [<p!]]
-   [cljs.core.async :as async :refer [>! <! timeout go chan]]
+   [cljs.core.async :as async :refer [>! <! go chan]]
    ["electron" :as electron :refer [app ipcMain Menu BrowserWindow dialog]]
-   ["child_process" :as proc]
    ["fs" :as fs]
    ["path" :as path]))
 

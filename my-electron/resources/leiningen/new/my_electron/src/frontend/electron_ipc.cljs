@@ -1,6 +1,6 @@
 (ns frontend.electron-ipc
   (:require
-   [cljs.core.async :refer [go <! >! chan]]
+   [cljs.core.async :refer [<! chan]]
    [frontend.events :as events]
    [frontend.subs :as subs]
    [re-frame.core :as rf]

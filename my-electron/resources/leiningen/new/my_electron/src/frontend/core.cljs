@@ -7,7 +7,7 @@
    [frontend.views :as views]
    [frontend.config :as config]
    [frontend.style.core :as style.core]
-   [cljs.core.async :refer [>! <! timeout go chan]]
+   [cljs.core.async :refer [>! go]]
    [common.const :as const]))
 
 (defn- compile-garden []
