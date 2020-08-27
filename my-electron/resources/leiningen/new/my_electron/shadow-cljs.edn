@@ -20,7 +20,8 @@
  :builds {:main {:target           :node-script
                  :output-to        "resources/main.js"
                  :main             main.core/main
-                 :compiler-options {:optimizations :simple}}
+                 :compiler-options {:infer-externs false
+                                    :optimizations :simple}}
 
           :preload {:target           :node-script
                     :output-to        "resources/scripts/preload.js"
@@ -33,7 +34,8 @@
                      :modules          {:frontend {:init-fn frontend.core/init}}
                      :compiler-options {:closure-warnings {:global-this :off}
                                         :closure-defines  {re-frame.trace.trace-enabled? true}
-                                        :optimizations    :simple}
+                                        :optimizations    :simple
+                                        :infer-externs    false}
                      :devtools         {:http-root    "public"
                                         :http-handler shadow.http.push-state/handle
                                         :http-port    8700
