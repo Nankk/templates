@@ -3,11 +3,12 @@
    [re-frame.core :as rf]
    ))
 
-(rf/reg-sub
-  ::name
-  (fn [db _]
-    (db :name)))
+(def subscriptions
+  {::name         [:name]
+   ::ipc-channels [:ui :ipc-chennels]})
 
-(rf/reg-sub ::ipc-channels
-  (fn [db [_ _]]
-    (get-in db [:ipc-channels])))
+(doseq [[sub-key item] subscriptions]
+  (if (coll? item)
+    (rf/reg-sub sub-key
+      (fn [db _] (get-in db (vec item))))
+    (rf/reg-sub sub-key item)))

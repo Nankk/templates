@@ -3,12 +3,12 @@
    [re-frame.core :as rf]
    [frontend.db :as db]))
 
-(rf/reg-event-db
-  ::initialize-db
-  (fn [_ _]
-    (println db/default-db)
-    db/default-db))
+(def handlers
+  {::initialize-db   (fn [_ [_ _]] db/default-db)
+   ::add-ipc-channel (fn [db [_ k v]] (update-in db [:ui :ipc-channels] assoc k v))})
 
-(rf/reg-event-db ::add-ipc-channel
-  (fn [db [_ k v]]
-    (update-in db [:ipc-channels] assoc k v)))
+(doseq [[ev-key item] handlers]
+  (if (coll? item)
+    (rf/reg-event-db ev-key
+      (fn [db [_ v]] (assoc-in db (vec item) v)))
+    (rf/reg-event-db ev-key item)))
