@@ -1,0 +1,18 @@
+;; shadow-cljs configuration
+{:dependencies
+ [[org.clojure/test.check "0.10.0-alpha4"]
+  [org.clojure/core.async "0.4.500"]
+  [cljs-http "0.1.46"]
+  [async-interop "0.1.0"]]
+
+ :source-paths
+ ["src"
+  "test"]
+
+ :js-options {:js-package-dirs ["node_modules"]}
+
+ :builds {:main {:target           :node-script
+                 :output-to        "resources/main.js"
+                 :main             {{name}}.main.core/main
+                 :compiler-options {:infer-externs false
+                                    :optimizations :simple}}}}

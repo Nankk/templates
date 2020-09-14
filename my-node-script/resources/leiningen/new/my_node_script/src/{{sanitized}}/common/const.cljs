@@ -1,0 +1,1 @@
+(ns {{name}}.common.const)

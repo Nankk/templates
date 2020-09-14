@@ -1,0 +1,12 @@
+{
+    "name": "{{name}}",
+    "version": "0.0.1",
+    "main": "main.js",
+    "private": true,
+    "devDependencies": {
+        "shadow-cljs": "^2.8.60"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}

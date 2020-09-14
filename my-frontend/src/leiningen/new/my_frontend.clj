@@ -1,31 +1,60 @@
 (ns leiningen.new.my-frontend
-  (:require [leiningen.new.templates :refer [renderer name-to-path ->files]]
+  (:require [leiningen.new.templates :refer [renderer raw-resourcer name-to-path ->files]]
             [leiningen.core.main :as main]))
 
 (def render (renderer "my-frontend"))
+(def raw (raw-resourcer "my-frontend"))
 
-(defn my-frontend
-  "FIXME: write documentation"
-  [name]
+(def binary-files ["resources/public/webfonts/fa-brands-400.woff"
+                   "resources/public/webfonts/fa-solid-900.eot"
+                   "resources/public/webfonts/fa-solid-900.ttf"
+                   "resources/public/webfonts/fa-solid-900.svg"
+                   "resources/public/webfonts/fa-regular-400.woff"
+                   "resources/public/webfonts/fa-brands-400.svg"
+                   "resources/public/webfonts/fa-regular-400.svg"
+                   "resources/public/webfonts/fa-solid-900.woff2"
+                   "resources/public/webfonts/fa-regular-400.ttf"
+                   "resources/public/webfonts/fa-brands-400.woff2"
+                   "resources/public/webfonts/fa-regular-400.eot"
+                   "resources/public/webfonts/fa-regular-400.woff2"
+                   "resources/public/webfonts/fa-solid-900.woff"
+                   "resources/public/webfonts/fa-brands-400.ttf"
+                   "resources/public/webfonts/fa-brands-400.eot"])
+
+(def text-files ["src/macros/async.clj"
+                 "src/macros/async.cljs"
+                 "src/frontend/style/global.cljs"
+                 "src/frontend/style/core.cljs"
+                 "src/frontend/db.cljs"
+                 "src/frontend/config.cljs"
+                 "src/frontend/events.cljs"
+                 "src/frontend/core.cljs"
+                 "src/frontend/views.cljs"
+                 "src/frontend/subs.cljs"
+                 "src/frontend/const.cljs"
+                 "package.json"
+                 "shadow-cljs.edn"
+                 "resources/public/css/fontawesome.css"
+                 "resources/public/css/reset.css"
+                 "resources/public/css/bootstrap.min.css"
+                 "resources/public/js/bootstrap.min.js"
+                 "resources/public/js/jquery.min.js"
+                 "resources/public/js/popper.min.js"
+                 "resources/public/index.html"
+                 ])
+
+(defn- process-text-file [data path]
+  (->files data [path (render path data)]))
+
+(defn- process-binary-file [data path]
+  (->files data [path (raw path)]))
+
+(defn my-frontend [name]
   (let [data {:name name
               :sanitized (name-to-path name)}]
+    (main/info "Please kindly use --force option for 'lein new'.")
     (main/info "Generating fresh 'lein new' my-frontend project.")
-    (->files data
-             ;; src
-             ["src/{{sanitized}}/config.cljs" (render "config.cljs" data)]
-             ["src/{{sanitized}}/core.cljs" (render "core.cljs" data)]
-             ["src/{{sanitized}}/db.cljs" (render "db.cljs" data)]
-             ["src/{{sanitized}}/events.cljs" (render "events.cljs" data)]
-             ["src/{{sanitized}}/subs.cljs" (render "subs.cljs" data)]
-             ["src/{{sanitized}}/views.cljs" (render "views.cljs" data)]
-             ;; src (style)
-             ["src/{{sanitized}}/style/core.cljs" (render "style/core.cljs" data)]
-             ["src/{{sanitized}}/style/global.cljs" (render "style/global.cljs" data)]
-             ;; resources
-             ["resources/public/index.html" (render "index.html" data)]
-             ["resources/public/css/fontawesome.css" (render "css/fontawesome.css" data)]
-             ;; plain
-             ["package.json" (render "package.json" data)]
-             ["shadow-cljs.edn" (render "shadow-cljs.edn" data)]
-             [".gitignore" (render "gitignore" data)]
-             )))
+    (doseq [f text-files] (process-text-file data f))
+    (doseq [f binary-files] (process-binary-file data f))
+    ;; Only .gitignore cannot be assined as the same name due to first dot.
+    (->files data [".gitignore" (render "gitignore" data)])))
