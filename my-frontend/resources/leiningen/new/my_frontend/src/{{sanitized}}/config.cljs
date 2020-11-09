@@ -1,4 +1,4 @@
-(ns frontend.config)
+(ns {{name}}.config)
 
 (def debug?
   ^boolean goog.DEBUG)

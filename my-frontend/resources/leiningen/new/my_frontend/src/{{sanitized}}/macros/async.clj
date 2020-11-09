@@ -1,4 +1,4 @@
-(ns macros.async)
+(ns {{name}}.macros.async)
 
 (defmacro defan
   "Defines an async function that returns a channel and will put the result of exps."

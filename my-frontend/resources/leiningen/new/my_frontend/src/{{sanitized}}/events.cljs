@@ -1,8 +1,8 @@
-(ns frontend.events
-  (:require
-   [re-frame.core :as rf]
-   [frontend.db :as db]
-   ))
+(ns {{name}}.events
+    (:require
+     [re-frame.core :as rf]
+     [{{name}}.db :as db]
+     ))
 
 (def handlers
   {::initialize-db   (fn [_ [_ _]] db/default-db)})

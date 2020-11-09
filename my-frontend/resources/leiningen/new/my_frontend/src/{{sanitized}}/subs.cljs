@@ -1,7 +1,7 @@
-(ns frontend.subs
-  (:require
-   [re-frame.core :as rf]
-   ))
+(ns {{name}}.subs
+    (:require
+     [re-frame.core :as rf]
+     ))
 
 (def subscriptions
   {::name         [:name]

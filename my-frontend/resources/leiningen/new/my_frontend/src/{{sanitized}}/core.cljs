@@ -1,12 +1,12 @@
-(ns frontend.core
-  (:require
-   [reagent.dom :as rdom]
-   [re-frame.core :as rf]
-   [frontend.events :as events]
-   [frontend.views :as views]
-   [frontend.config :as config]
-   [frontend.style.core :as style.core]
-   ))
+(ns {{name}}.core
+    (:require
+     [reagent.dom :as rdom]
+     [re-frame.core :as rf]
+     [{{name}}.events :as events]
+     [{{name}}.views :as views]
+     [{{name}}.config :as config]
+     [{{name}}.style.core :as style.core]
+     ))
 
 (defn- compile-garden []
   (println "Compiling garden...")
