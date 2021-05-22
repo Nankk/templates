@@ -5,7 +5,7 @@
 (def render (renderer "my-reitit-server"))
 
 (def text-files ["src/{{sanitized}}/core.clj"
-                 "src/{{sanitized}}/handler/main.clj"
+                 "src/{{sanitized}}/handlers/main.clj"
                  "project.clj"])
 
 (defn- process-text-file [data path]

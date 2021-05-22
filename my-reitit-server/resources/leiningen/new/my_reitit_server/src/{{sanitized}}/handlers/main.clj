@@ -1,4 +1,4 @@
-(ns {{name}}.handler.main
+(ns {{name}}.handlers.main
     (:require [clojure.spec.alpha :as s]))
 
 {{! Change mustache delimiter to <% and %> }}
